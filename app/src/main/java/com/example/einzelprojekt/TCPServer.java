@@ -10,7 +10,7 @@ import java.net.Socket;
 public class TCPServer {
     public static void main(String[] args) throws IOException {
         String clientSentence;
-        ServerSocket welcomeSocket = new ServerSocket(6789);
+        ServerSocket welcomeSocket = new ServerSocket(53212);
 
         while(true){
             Socket connectionSocket = welcomeSocket.accept();
