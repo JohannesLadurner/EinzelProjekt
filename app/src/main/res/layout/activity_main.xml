@@ -12,6 +12,7 @@
         android:layout_width="161dp"
         android:layout_height="68dp"
         android:layout_marginBottom="100dp"
+        android:onClick="BTNSend_Click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
