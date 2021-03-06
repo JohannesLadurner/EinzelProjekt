@@ -11,7 +11,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="161dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="32dp"
         android:onClick="BTNSend_Click"
         android:text="An Server senden"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,7 +51,7 @@
         android:id="@+id/TVServerRespondTitle"
         android:layout_width="223dp"
         android:layout_height="43dp"
-        android:layout_marginTop="316dp"
+        android:layout_marginTop="264dp"
         android:text="Antwort vom Server:"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,12 +61,26 @@
 
     <TextView
         android:id="@+id/TVServerRespond"
-        android:layout_width="6dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="372dp"
+        android:layout_width="261dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="324dp"
         android:text="-"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="-" />
+
+    <TextView
+        android:id="@+id/TVPrime"
+        android:layout_width="202dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="456dp"
+        android:text="-"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="-" />
