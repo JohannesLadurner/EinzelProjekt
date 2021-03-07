@@ -16,12 +16,12 @@ public class TCPClient extends Thread implements Runnable{
     @Override
     public void run() {
         try {
-            Socket clientSocket = new Socket("se2-isys.aau.at", 53212);
+            Socket clientSocket = new Socket("se2-isys.aau.at", 53212); //Connection with socket
             DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
             BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            outToServer.writeBytes(message + '\n');
-            returnValue = inFromServer.readLine();
-            clientSocket.close();
+            outToServer.writeBytes(message + '\n'); //Send message to server
+            returnValue = inFromServer.readLine(); //Get response from server
+            clientSocket.close(); //Close the socket
         } catch (Exception e) {
             e.printStackTrace();
         }
