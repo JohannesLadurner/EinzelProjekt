@@ -12,15 +12,16 @@ public class MainActivity extends AppCompatActivity {
 
     EditText msgForServer;
     TextView msgServer;
-    TextView msgPrimes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         msgForServer = findViewById(R.id.InputField);
         msgServer = findViewById(R.id.TVServerRespond);
-        msgPrimes = findViewById(R.id.TVPrime);
     }
+
+    private String firstPartMsg = "";
+    private String secondPartMsg = "";
 
     /**
      * This method will be called when the button on the app got pressed.
@@ -32,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
         TCPClient client = new TCPClient(matrikelnr);
         client.start(); //Start the Thread (run() will be executed)
         client.join(); //Wait for server to finish
+        firstPartMsg = client.getServerMessage(); //Get respond from server
         msgServer.setVisibility(View.VISIBLE);
-        msgServer.setText(client.getServerMessage()); //Get respond from server, print it on the app
+        msgServer.setText(firstPartMsg + "\n\n" + secondPartMsg);
     }
 
     /**
@@ -60,8 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 msg += digit; //Add it to the result string
             }
         }
-        msgPrimes.setVisibility(View.VISIBLE);
-        msgPrimes.setText("Primzahlen: " + msg); //Set text for the app
+        secondPartMsg = "Primzahlen: " + msg;
+        msgServer.setVisibility(View.VISIBLE);
+        msgServer.setText(firstPartMsg + "\n\n" + secondPartMsg);
     }
 
     /**
