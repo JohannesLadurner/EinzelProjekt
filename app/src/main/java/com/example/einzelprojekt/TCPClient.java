@@ -5,7 +5,7 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class TCPClient implements Runnable {
+public class TCPClient extends Thread implements Runnable{
 
     String message;
     String returnValue;

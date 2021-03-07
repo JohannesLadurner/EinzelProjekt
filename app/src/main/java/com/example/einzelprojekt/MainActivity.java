@@ -25,11 +25,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void BTNSend_Click(View v) throws InterruptedException {
-        TCPClient client = new TCPClient(msgForServer.getText().toString());
-        new Thread(client).start();
-        Thread.sleep(100);
+        String matrikelnr = msgForServer.getText().toString();
+        TCPClient client = new TCPClient(matrikelnr);
+        client.start();
+        client.join(); //Wait for server to finish
         msgServer.setText(client.getServerMessage());
-        printAllPrimeDigits(msgForServer.getText().toString());
+        printAllPrimeDigits(matrikelnr);
     }
 
     public void printAllPrimeDigits(String number)
